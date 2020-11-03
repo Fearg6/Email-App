@@ -18,17 +18,17 @@ public class Email {
     public Email(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        System.out.println("Department Codes:\n Email created: First name: "+this.firstName+" Last Name: "+this.lastName);
+        System.out.println("New Worker: "+this.firstName+" "+this.lastName);
 
         this.department = setDepartment();
-        System.out.println("Department: "+this.department);
+//        System.out.println("Department: "+this.department);
 
         this.password = randomPassword(defaultPasswordLength);
         System.out.println("Password: "+this.password);
 
         //Combine elements to generate email
         email = firstName.toLowerCase()+"."+lastName.toLowerCase()+"@"+department+"."+companySuffix;
-        System.out.println("email: "+email);
+//        System.out.println("email: "+email);
     }
     //Ask for the department
 
@@ -82,5 +82,11 @@ public class Email {
 
     public String getPassword() {
         return password;
+    }
+
+    public String showInfo() {
+        return "Display Name: "+firstName+""+lastName+
+                "\nCompany Email: "+email+
+                "\nMailbox Capacity: "+mailBoxCapacity+"mb";
     }
 }
